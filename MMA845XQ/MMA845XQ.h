@@ -19,7 +19,7 @@
 #define MMA_845XQ_DEFAULT_ADDRESS 0x1C
 
 #include "Arduino.h"
-#include "../Wire/Wire.h"
+#include "Wire.h"
 
 ////////////////////////////////////////////
 // Interrupts
@@ -58,9 +58,9 @@ class MMA845XQ
     // Interrupts
     bool setInterrupt(uint8_t type, uint8_t pin, bool on);
     bool disableAllInterrupts();
-  private:
+
 	uint8_t _read_register(uint8_t offset);
-  	void _write_register(uint8_t b, uint8_t offset);
+	void _write_register(uint8_t b, uint8_t offset);
 
   	  
     float geta2d(float gx, float gy);
